@@ -17,31 +17,22 @@
 # Use the non-open-source parts, if they're present
 -include vendor/tocoding/poplar/BoardConfigVendor.mk
 
-ifeq ($(ANDROID_BUILD_TYPE), 32)
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a9
-else
+# Primary Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_SMP := true
 
+# Secondary Arch
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
-TARGET_2ND_CPU_VARIANT := cortex-a9
+TARGET_2ND_CPU_VARIANT := cortex-a15
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 
+TARGET_USES_64_BIT_BINDER := true
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
-endif
-
-TARGET_USES_64_BIT_BINDER := true
 
 TARGET_BOARD_PLATFORM := hidolphin
 TARGET_BOOTLOADER_BOARD_NAME := bigfish
