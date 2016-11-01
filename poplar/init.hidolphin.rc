@@ -1,0 +1,20 @@
+# create directory for playready certification
+    chown system system /data/playready
+    chmod 0777 /data/playready
+    chown drm drm /data/playready/prpd
+    chmod 0777 /data/playready/prpd
+
+service usb-driver /system/bin/usb-driver
+    class main
+    user root
+    group root system input
+
+service skyplayserver /system/bin/skyplayserver
+    class main
+    user system
+    group system inet
+
+service dlnaserver /system/bin/dlnaserver
+    class main
+    user system
+    group system inet

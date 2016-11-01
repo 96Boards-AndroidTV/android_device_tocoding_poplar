@@ -1,0 +1,24 @@
+# Android fstab file.
+#<src>                                                  <mnt_point>         <type>    <mnt_flags and options>                              <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+/dev/block/platform/hi_mci.1/by-name/system                  /system                ext4                ro,barrier=1         wait
+/dev/block/platform/hi_mci.1/by-name/userdata                /data                  ext4                noatime,nosuid,nodev,barrier=1,nomblk_io_submit      wait,check
+/dev/block/platform/hi_mci.1/by-name/cache                   /cache                 ext4                noatime,nosuid,nodev wait,check
+/dev/block/platform/hi_mci.1/by-name/sdcard                  /mnt/shell/emulated    ext4                noatime,nosuid,nodev wait,check
+/devices/platform/hiusb-ehci.0                               /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/hiusb-ehci.1                               /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/hiusb-ohci.0                               /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/hiusb-ohci.1                               /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/ahci.0                                     /mnt            vfat            defaults             voldmanaged=none:auto
+#/devices/platform/hi_mci.0/mmc_host/mmc1                     /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/hiusb3.0                                   /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/hiusb-xhci.0                               /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9820000.himciv200.SD/mmc_host/mmc1    /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9890000.ehci                          /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9890000.ohci                          /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f98a0000.xhci                          /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9930000.ehci                          /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9900000.hiahci                        /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f98b0000.xhci                          /mnt            vfat            defaults             voldmanaged=none:auto
+/devices/platform/soc/f9820000.himciv200.SD                  /mnt            vfat            defaults             voldmanaged=none:auto
